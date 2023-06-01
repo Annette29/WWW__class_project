@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Survey Answers</title>
+    <title>Parallax Web Quiz</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
