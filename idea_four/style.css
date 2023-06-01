@@ -70,7 +70,7 @@ body,html{
 
 .ptext{
 	position: absolute;
-	font-size: 40px;
+	font-size: 45px;
 	font-family: 'Anonymous';
 	top: 50%;
 	width: 100%;
@@ -81,20 +81,10 @@ body,html{
 }
 
 .ptext1{
-	font-size: 25px;
+	font-size: 35px;
 	font-family: 'serif';
 	text-align: center;
 	letter-spacing: 4px;
-}
-
-.ptext2{
-	font-size: 25px;
-	font-family: 'serif';
-	text-align: center;
-	letter-spacing: 4px;
-	top: 50%;
-	width: 100%;
-	color: #ddd;
 }
 
 
