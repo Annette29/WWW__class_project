@@ -1,3 +1,20 @@
+<?php
+session_start();
+if (isset($_SESSION['error1'])) {
+    echo $_SESSION['error1'];
+    unset($_SESSION['error1']);
+}
+if (isset($_SESSION['error2'])) {
+    echo $_SESSION['error2'];
+    unset($_SESSION['error2']);
+}
+if (isset($_SESSION['error3'])) {
+    echo $_SESSION['error3'];
+    unset($_SESSION['error3']);
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>

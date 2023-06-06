@@ -23,25 +23,30 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->store_result();
 
     if ($stmt->num_rows > 0) {
-        // Username already exists, redirect to index.php
-        $_SESSION['error'] = "This user already exists. Please choose another username.";
+        // Username already exists, display an error message
+        session_start(); 
+        $_SESSION['error1'] = "This user already exists. Please choose another username.";
         header("Location: index.php");
-        exit();
+        exit();    
     } else {
         // Username doesn't exist, insert the new user into the database
         $stmt = $conn->prepare("INSERT INTO users (username, password) VALUES (?, ?)");
         $stmt->bind_param("ss", $username, $password);
         $stmt->execute();
-
+    
         if ($stmt->affected_rows > 0) {
             // Registration successful, redirect to login page
-            header("Location: login.php");
-            exit(); // Make sure to exit after redirection
+            header("Location: open_quiz.php");
+            exit(); 
         } else {
             // Error occurred, display an error message
-            echo "Error: Registration failed.";
+            session_start();
+            $_SESSION['error2'] = "Error: Registration failed.";
+            header("Location: index.php");
+            exit();
         }
     }
+    
 
     $stmt->close();
     $conn->close();

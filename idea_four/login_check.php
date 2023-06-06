@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -6,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    // Retrieve the user from the database 
+    // Retrieve the user from the database
     // Connect to the database
     $servername = "localhost";
     $username = "root";
@@ -29,31 +30,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = $stmt->get_result();
 
     // Check if a matching user was found
-if ($result->num_rows === 1) {
-    // Retrieve the stored password
-    $row = $result->fetch_assoc();
-    $storedPassword = $row['password'];
+    if ($result->num_rows === 1) {
+        // Retrieve the stored password
+        $row = $result->fetch_assoc();
+        $storedPassword = $row['password'];
 
-    // Verify the password
-    if (password_verify($password, $storedPassword)) {
-        // Password is correct, set the user session
-        $_SESSION['username'] = $username;
-
-        // Redirect the user to the home page 
-        header("Location: open_quiz.html");
-        exit();
+        // Verify the password
+        if (password_verify($password, $storedPassword)) {
+            // Password is correct, set the user session
+            $_SESSION['username'] = $username;
+            $_SESSION['logged_in'] = true; // Set the flag
+            header("Location: open_quiz.php");
+            exit();
+        } else {
+            // Invalid password
+            session_start();
+            $_SESSION['error'] = "Wrong password! Try Again!";
+            header("Location: login.php");
+            exit();
+        }
     } else {
-        // Invalid password
-        $_SESSION['error'] = "Wrong password! Try Again!";
-        header("Location: login.php");
+        // No matching user found
+        session_start();
+        $_SESSION['error3'] = "This user does not exist. Please create a new account.";
+        header("Location: index.php");
         exit();
     }
-} else {
-    // No matching user found
-    $_SESSION['error'] = "This user does not exist :(";
-    header("Location: login.php");
-    exit();
-}
 
     // Close the statement and connection
     $stmt->close();
