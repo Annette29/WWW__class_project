@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     
         if ($stmt->affected_rows > 0) {
             // Registration successful, redirect to login page
-            header("Location: open_quiz.php");
+            header("Location: login.php");
             exit(); 
         } else {
             // Error occurred, display an error message

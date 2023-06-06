@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = $stmt->get_result();
 
     // Check if a matching user was found
-    if ($result->num_rows === 1) {
+    if ($result->num_rows > 0) {
         // Retrieve the stored password
         $row = $result->fetch_assoc();
         $storedPassword = $row['password'];
@@ -38,6 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Verify the password
         if (password_verify($password, $storedPassword)) {
             // Password is correct, set the user session
+            session_start();
             $_SESSION['username'] = $username;
             $_SESSION['logged_in'] = true; // Set the flag
             header("Location: open_quiz.php");
