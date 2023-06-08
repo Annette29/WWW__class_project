@@ -1,0 +1,128 @@
+body{
+  margin: 0;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #16d8c8;
+}
+
+h1, p{
+  text-align: center;
+  color: #000;
+  margin: 2%;
+  line-height: 1.5em;
+}
+#game{
+  color: #333;
+}
+
+.hidden{
+  display: none;
+}
+
+.button-container{
+  text-align: center;
+  margin-top:  5%;
+}
+
+.button{
+  background-color: #222;
+  color : #fff;
+  padding: 2%;
+  font-size: 20px;
+  font-family: 'Press Start 2P', cursive;
+  border: none;
+}
+
+.button:hover {
+  background-color: #d12525;
+  cursor: pointer;
+}
+
+.img{
+  width: 100%;
+}
+
+.img img{
+  width: 40%;
+  margin: 2% 30%;
+}
+
+.section{
+	text-align: left;
+  width: 80%;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+	padding: 50px 80px;
+}
+
+.section-light{
+	background-color: #f4f4f4;
+	color: #666;
+}
+
+.section-dark{
+	background-color: #282e34;
+	color: #ddd;
+}
+.ptext{
+	font-size: 45px;
+	top: 50%;
+	width: 100%;
+	text-align: center;
+	color: #ddd;
+	letter-spacing: 10px;
+	text-transform: uppercase;
+}
+
+.center{
+  text-align: "center";
+}
+
+.ptext1{
+	font-size: 35px;
+	font-family: 'monospace';
+	text-align: left;
+	letter-spacing: 4px;
+	line-height: 1.3;
+}
+
+
+.ptext .boder{
+	background-color: #111;
+	color: #fff;
+	padding: 20px;
+
+}
+
+.ptext .boder.trans{
+	background-color: transparent;
+}
+
+.response{
+  width: 80%;
+  align-items: "center";
+  padding: 10;
+  border: solid;
+  border-color: #fff;
+  margin: auto;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+
+.answer{
+  color: #fff;
+  font-size: 200%;
+}
+
+/* Remove bullet points from quiz questions */
+#quizList {
+  list-style-type: none;
+  padding-left: 5;
+}
+
+/* Remove bullet points from user responses */
+#responseContainer ul {
+  list-style-type: none;
+  padding-left: 5;
+}
