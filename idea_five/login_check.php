@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             session_start();
             $_SESSION['username'] = $username;
             $_SESSION['logged_in'] = true; // Set the flag
-            header("Location: open_quiz.php");
+            header("Location: potential_index.php");
             exit();
         } else {
         // Invalid password

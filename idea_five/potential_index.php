@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +27,7 @@
     </div>
 
     <div class="button-container">
-      <button class="button" id="quizBtn" type="button"> Take a random Quiz </button>
+      <button class="button" id="quizBtn" type="button"> Take a Random Quiz </button>
     </div>
 
     <div id="quiz" class="hidden">
@@ -45,11 +46,17 @@
     <div id="responseContainer" class="hidden">
         <!-- User responses will be displayed here -->
     </div>
-      
+    <div class="button-container">
+      <!-- Logout button -->
+      <form method="post" action="logout.php">
+        <input type="submit" name="logout" value="Logout" class="button">
+      </form>
+    </div>  
     <div class="img">
       <img src="ghost.png" alt="ghost">
     </div>
   </div>
+  
   <script src="potential_script.js"></script>
 </body>
 
