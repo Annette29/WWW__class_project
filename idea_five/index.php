@@ -1,15 +1,19 @@
 <?php
 session_start();
+// Check if an error message exists in the session
 if (isset($_SESSION['error1'])) {
-    echo $_SESSION['error1'];
+    // Display the error message as a div element
+    echo "<div class='error-message'>{$_SESSION['error1']}</div>";
+    // Clear the error message from the session
     unset($_SESSION['error1']);
 }
+
 if (isset($_SESSION['error2'])) {
-    echo $_SESSION['error2'];
+    echo "<div class='error-message'>{$_SESSION['error2']}</div>";
     unset($_SESSION['error2']);
 }
 if (isset($_SESSION['error3'])) {
-    echo $_SESSION['error3'];
+    echo "<div class='error-message'>{$_SESSION['error3']}</div>";
     unset($_SESSION['error3']);
 }
 ?>

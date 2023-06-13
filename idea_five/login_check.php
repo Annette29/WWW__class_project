@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } else {
         // Invalid password
             session_start();
-            $_SESSION['error'] = "Wrong password! Try Again!";
+            $_SESSION['error'] = "Wrong password :( Try Again.";
             header("Location: login.php");
             exit();
         }

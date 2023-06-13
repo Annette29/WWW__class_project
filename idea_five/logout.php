@@ -12,7 +12,7 @@ if(isset($_POST['logout'])) {
 
     // Redirect to the login page or any other page
     session_start();
-    $_SESSION['logout'] = "We're sorry to see you go!
+    $_SESSION['logout'] = "We're sorry to see you go :(
                              Come back soon!";
     header("Location: login.php");
     exit();
